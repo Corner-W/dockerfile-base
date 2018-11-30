@@ -10,7 +10,9 @@ RUN yum install -y  epel-release \
     java-1.8.0-openjdk java-1.8.0-openjdk-devel \
     readline-devel  net-tools && \
     yum clean all && \
-    localedef -i en_US -f UTF-8 en_US.UTF-8
+    localedef -i en_US -f UTF-8 en_US.UTF-8 && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 
 ENV SHELL=/bin/bash \
     NB_USER=admin \
@@ -29,4 +31,4 @@ ENV HOME=/home/$NB_USER
 RUN groupadd -g $NB_GID $NB_GROUP && \
     useradd -m -s /bin/bash -N -u $NB_UID -g $NB_GID $NB_USER
 
-USER $NB_UID
+# USER $NB_UID

@@ -7,7 +7,7 @@ ARG GLIBC_VERSION="2.27-r0"
 
 # Install glibc and useful packages 
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && apk --update add \
+    && apk --update add --no-cache \
     bash \
     gcc\
     curl \
@@ -22,7 +22,7 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/re
     libxrender \
     linux-headers \
     musl-dev \
-    tini@testing \
+    tini@testing tzdata \
     && curl -L "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/sgerrand.rsa.pub" -o /etc/apk/keys/sgerrand.rsa.pub \
     && curl -L "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" -o glibc.apk \
     && curl -L "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" -o glibc-bin.apk \
@@ -30,7 +30,7 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/re
     && apk add glibc-bin.apk \
     && apk add openjdk8-jre-base \
     && /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc/usr/lib \
-    && rm -rf glibc* && rm -rf  /var/cache/apk/*
+    && rm -rf glibc*
 
 ENV SHELL=/bin/bash \
     NB_USER=admin \
@@ -45,6 +45,7 @@ ENV JAVA_HOME=/usr/lib/jvm/default-jvm
 ENV PATH=${PATH}:${JAVA_HOME}/bin
 
 RUN addgroup -g $NB_GID  $NB_GROUP && \
-    adduser -h $HOME -s /bin/bash  -u $NB_UID -G $NB_GROUP -D $NB_USER
+    adduser -h $HOME -s /bin/bash  -u $NB_UID -G $NB_GROUP -D $NB_USER && \
+    cp  /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-USER $NB_USER
+# USER $NB_USER
