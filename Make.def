@@ -1,8 +1,8 @@
 # Top level makefile template
 
 # XXX: use domain name jimage.jd.com
-REGISTRY := mirror.jd.com
-NAMESPACE := project-9n
+REGISTRY := 10.16.32.59:1180
+NAMESPACE := cuda
 
 .PHONY: help prepare build debug push all build-r push-r all-r
 
