@@ -2,7 +2,7 @@
 
 # XXX: use domain name jimage.jd.com
 REGISTRY := harbor-cz.deepblueai.com
-NAMESPACE := cuda
+NAMESPACE := nvidia
 
 .PHONY: help prepare build debug push all build-r push-r all-r
 
