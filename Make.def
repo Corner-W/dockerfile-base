@@ -1,7 +1,7 @@
 # Top level makefile template
 
 # XXX: use domain name jimage.jd.com
-REGISTRY := 10.16.32.59:1180
+REGISTRY := harbor-cz.deepblueai.com
 NAMESPACE := cuda
 
 .PHONY: help prepare build debug push all build-r push-r all-r

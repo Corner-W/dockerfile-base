@@ -1,4 +1,4 @@
-FROM 10.16.32.59:1180/cuda/ubuntu:16.04
+FROM harbor-cz.deepblueai.com/cuda/ubuntu:16.04
 MAINTAINER  Rieguass <wangdf@deepblueai.com>
 
 COPY sources.list /etc/apt/
@@ -33,4 +33,4 @@ RUN curl -so ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.5.1
  && conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 
 
-RUN pip install --no-cache-dir opencv-python
+# RUN pip install --no-cache-dir opencv-python
