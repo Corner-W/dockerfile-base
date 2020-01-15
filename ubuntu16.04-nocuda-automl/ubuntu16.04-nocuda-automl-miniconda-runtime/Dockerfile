@@ -1,4 +1,4 @@
-FROM harbor-cz.deepblueai.com/cuda/ubuntu16.04-nocuda-automl
+FROM harbor-cz.deepblueai.com/nvidia/ubuntu16.04-nocuda-automl
 
 MAINTAINER WangJin <wangjin@deepblueai.com>
 
