@@ -1,4 +1,7 @@
-FROM 10.16.32.59:1180/web/nginx:alpine
+FROM harbor-cz.deepblueai.com/nvidia/alpine-nginx-base
+
+MAINTAINER  Rieguass <wangdf@deepblueai.com>
+
 
 RUN mkdir /workspace
 
