@@ -1,7 +1,8 @@
-FROM harbor-cz.deepblueai.com/osbase/alpine:latest
+FROM alpine:latest
 
 MAINTAINER  Rieguass <wangdf@deepblueai.com>
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 ARG NGINX_VERSION=1.17.0
 
 ARG GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8

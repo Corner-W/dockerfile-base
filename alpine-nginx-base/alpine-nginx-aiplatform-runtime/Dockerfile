@@ -1,4 +1,4 @@
-FROM harbor-cz.deepblueai.com/nvidia/alpine-nginx-base
+FROM ccr.ccs.tencentyun.com/deepblue/alpine-nginx-base
 
 MAINTAINER  Rieguass <wangdf@deepblueai.com>
 

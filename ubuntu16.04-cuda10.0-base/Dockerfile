@@ -1,4 +1,5 @@
-FROM 10.16.32.59:1180/cuda/ubuntu:16.04
+FROM ccr.ccs.tencentyun.com/qcloud/ubuntu:16.04
+# FROM 10.16.32.59:1180/cuda/ubuntu:16.04
 MAINTAINER  Rieguass <wangdf@deepblueai.com>
 
 COPY sources.list /etc/apt/

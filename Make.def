@@ -1,8 +1,8 @@
 # Top level makefile template
 
 # XXX: use domain name jimage.jd.com
-REGISTRY := harbor-cz.deepblueai.com
-NAMESPACE := nvidia
+REGISTRY := ccr.ccs.tencentyun.com
+NAMESPACE := deepblue
 
 .PHONY: help prepare build debug push all build-r push-r all-r
 
